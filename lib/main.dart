@@ -19,19 +19,23 @@ class Home extends StatelessWidget{
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(""),
-          fit: BoxFit.cover,),
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg.jpg'),
+          fit: BoxFit.fill,),
         ),
         
         child: Column(
            children: <Widget>[
+            Padding(padding: const EdgeInsets.only(top:20),),
             Container(alignment: Alignment.centerRight,
             child: Text ("Login",
             style: TextStyle(
-              fontSize: 20.0)
-
+              fontSize: 20.0, 
+              color: Colors.white)
+              
             )
             ),
+            Padding(padding: const EdgeInsets.only(top:80),),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -42,45 +46,61 @@ class Home extends StatelessWidget{
                 decoration: BoxDecoration(
                 ),
               ),
-              Text("Hexagon") 
+              Text("Hexagon",
+              style: TextStyle(fontSize: 25, color: Colors.white),
+) 
 
             ],),
+            Padding(padding: const EdgeInsets.only(top:50),),
             //third child
-            TextFormField(
+            Padding(
+              padding: const EdgeInsets.only(left:30, right:30),
+              child: TextFormField(
               autofocus: false,
               decoration: InputDecoration(
+                filled: true,
                 fillColor: Colors.white,
                 contentPadding: EdgeInsets.fromLTRB(20, 15, 15, 15),
                 border:OutlineInputBorder(borderRadius: BorderRadius.circular(20)
                 ),
                 hintText: 'UserName'
               )
-            ),
-            Padding(padding: const EdgeInsets.only(top:30),)
+            ),),
+            Padding(padding: const EdgeInsets.only(top:25),)
             ,//Fourth Child
 
-            TextFormField(
+            Padding(
+              padding: const EdgeInsets.only(left:30, right:30),
+              child:TextFormField(
               autofocus: false,
               decoration: InputDecoration(
+                filled: true,
                 fillColor: Colors.white,
                 contentPadding: EdgeInsets.fromLTRB(20, 15, 15, 15),
                 border:OutlineInputBorder(borderRadius: BorderRadius.circular(20)
                 ),
                 hintText: 'Password'
               )
-            ),
-            Padding(padding: const EdgeInsets.only(top:30, bottom:35),),
+            ),),
+            Padding(padding: const EdgeInsets.only(top:25, bottom:20),),
                
             //Fifth Child
-             RaisedButton(
+             Padding(
+              padding: const EdgeInsets.only(left:30, right:30),
+            child:SizedBox(
+              width: double.infinity,
+              child:RaisedButton(
+               
                 elevation: 5,
                 onPressed: () {},
                 color: Color(int.parse('0xFF' + 'fc6d91')),
                 child: Text(
                 'Login',
                 style: TextStyle(color: Colors.white),
-    ),
-  ),
+                ), 
+                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+    
+  ),),),
   Padding(padding: const EdgeInsets.only( bottom:20),),
        
             //Sixth Child
@@ -88,12 +108,46 @@ class Home extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text
-                ("Don't have an account? Sign Up"),
+                ("Don't have an account? Sign Up",
+                style: TextStyle(color: Colors.white),),
                 Padding(padding: const EdgeInsets.only(left:10),
                 child: Text('Sign Up',
-                style:TextStyle(decoration: TextDecoration.underline),
+
+                style:TextStyle(decoration: TextDecoration.underline, color: Colors.white),
                 ))],
-            )
+            ),
+
+            Padding(padding: const EdgeInsets.only(top:40, bottom: 40),),
+
+            Text( "Login with Social Network", 
+            style: TextStyle(color: Colors.white)),
+
+            Padding(padding: const EdgeInsets.only(bottom: 25),),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget>[
+              Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(color: Colors.white,
+              shape: BoxShape.circle),),
+              Padding(padding: const EdgeInsets.only(left:10),
+              child: Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(color: Colors.white,
+              shape: BoxShape.circle),),),
+              Padding(padding: const EdgeInsets.only(left:10),
+              child: Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(color: Colors.white,
+              shape: BoxShape.circle),),
+
+            )])
+            
+           
             
            ],
 
